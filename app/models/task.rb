@@ -29,8 +29,6 @@ class Task < ApplicationRecord
     end
   end
 
-
-
   private
 
   def validate_name_not_including_comma
