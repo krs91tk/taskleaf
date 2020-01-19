@@ -8,7 +8,9 @@
 追加した機能
 ・タスクの進捗（未着手・着手・完了）
 
-
+使ってる技術
+Ruby on Rails
+sidekiq
 
 
 This README would normally document whatever steps are necessary to get the
