@@ -1,5 +1,14 @@
 # README
 
+こちらは
+「現場で使える Ruby on Rails 5速習実践ガイド」を読んで作成しているタスク管理アプリです。
+
+一通り読み終えたので、新たに機能追加してます。
+
+追加した機能
+・タスクの進捗（未着手・着手・完了）
+
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
