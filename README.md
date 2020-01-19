@@ -9,13 +9,15 @@
 ・タスクの進捗（未着手・着手・完了）
 
 
+
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
 Things you may want to cover:
 
 * Ruby version
-
+  2.5.1
 * System dependencies
 
 * Configuration
