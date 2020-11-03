@@ -1,0 +1,7 @@
+2020-11-03 12:32:21.982 JST [18584] FATAL:  database files are incompatible with server
+2020-11-03 12:32:21.982 JST [18584] DETAIL:  The data directory was initialized by PostgreSQL version 11, which is not compatible with this version 13.0.
+2020-11-03 13:00:57.919 JST [37336] LOG:  starting PostgreSQL 13.0 on x86_64-apple-darwin19.6.0, compiled by Apple clang version 12.0.0 (clang-1200.0.32.2), 64-bit
+2020-11-03 13:00:57.922 JST [37336] LOG:  could not translate host name "localhost", service "5432" to address: nodename nor servname provided, or not known
+2020-11-03 13:00:57.922 JST [37336] WARNING:  could not create listen socket for "localhost"
+2020-11-03 13:00:57.922 JST [37336] FATAL:  could not create any TCP/IP sockets
+2020-11-03 13:00:57.924 JST [37336] LOG:  database system is shut down

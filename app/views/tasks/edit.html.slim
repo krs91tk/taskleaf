@@ -15,5 +15,5 @@ h1 タスクの編集
     = f.file_field :image, class: 'form-control'
   .form-group
     = f.label :status
-    = f.select :status, Task.statuses.keys, {}, class: 'form-control', id: 'task_completed'
+    = f.select :status, Task.statuses.keys, {}, class: 'form-control', id: 'task_status'
   = f.submit nil, class: 'btn btn-primary'
