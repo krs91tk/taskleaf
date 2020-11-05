@@ -2,7 +2,8 @@
 
 class Task < ApplicationRecord
   has_one_attached :image
-  enum status: %i[untouched started completed]
+  enum status: { untouched: 0, started: 1, completed: 2 }
+  enum priority: { low: 0, middle: 1, high: 2 }
 
   validates :name, presence: true, length: { maximum: 30 }
   validate :validate_name_not_including_comma
