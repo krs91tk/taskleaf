@@ -17,14 +17,20 @@ table.table.table-hover
       th= Task.human_attribute_name(:image)
       td= image_tag @task.image if @task.image.attached?
     tr
-      th= Task.human_attribute_name(:created_at)
-      td= @task.created_at
+      th= Task.human_attribute_name(:priority)
+      td= @task.priority
     tr
-      th= Task.human_attribute_name(:updated_at)
-      td= @task.updated_at
+      th= Task.human_attribute_name(:deadline)
+      td= @task.deadline.strftime('%Y/%m/%d %H:%M:%S')
     tr
       th= Task.human_attribute_name(:status)
       td= @task.status
+    tr
+      th= Task.human_attribute_name(:created_at)
+      td= @task.created_at.strftime('%Y/%m/%d %H:%M:%S')
+    tr
+      th= Task.human_attribute_name(:updated_at)
+      td= @task.updated_at.strftime('%Y/%m/%d %H:%M:%S')
 
 = link_to '編集', edit_task_path, class: 'btn btn-primary mr-3'
 = link_to '削除', @task, method: :delete, data: { confirm: "タスク「#{@task.name}」を削除します。よろしいですか?" }, class: 'btn btn-danger'

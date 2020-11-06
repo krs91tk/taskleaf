@@ -2,7 +2,7 @@ h1 タスク一覧
 
 = search_form_for @q, class: 'mb-5' do |f|
   .form-group.row
-    = f.label :name_cont, '名称', class: 'col-sm-2 col-form-label'
+    = f.label :name_cont, 'タスク名', class: 'col-sm-2 col-form-label'
     .col-sm-10
       = f.search_field :name_cont, class: 'form-control'
   .form-group.row
@@ -24,8 +24,8 @@ table.table.table-hover
     tr
       th= sort_link(@q, :name)
       th= Task.human_attribute_name(:priority)
-      th= Task.human_attribute_name(:status)
       th= Task.human_attribute_name(:deadline)
+      th= Task.human_attribute_name(:status)
       th= Task.human_attribute_name(:created_at)
       th= Task.human_attribute_name(:updated_at)
       th
@@ -34,8 +34,8 @@ table.table.table-hover
       tr id="task-#{task.id}"
         td= link_to task.name, task_path(task)
         td= task.priority
-        td= task.status
         td= task.deadline.strftime('%Y/%m/%d %H:%M:%S')
+        td= task.status
         td= task.created_at.strftime('%Y/%m/%d %H:%M:%S')
         td= task.updated_at.strftime('%Y/%m/%d %H:%M:%S')
         td
