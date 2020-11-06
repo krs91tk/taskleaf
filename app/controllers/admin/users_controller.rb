@@ -31,19 +31,17 @@ class Admin::UsersController < ApplicationController
     if @user.update(user_params)
       redirect_to admin_user_path(@user), notice: "ユーザー「#{@user.name}」を更新しました。"
     else
-      render 'new'
+      render "new"
     end
   end
 
   def destroy
     @user = User.find(params[:id])
 
-    # if @user.admin = 1
-    #   user_count = User.where(admin: 1).count
-    #   if user_count < 1
-    #     render :new
-    #   end
-    # end
+    if @user.admin?
+      admin_user_count = User.where(admin: true).count
+      return redirect_to admin_users_url, notice: "他に管理者ユーザーがいないため削除できません。" if admin_user_count == 1
+    end
 
     @user.destroy
     redirect_to admin_users_url, notice: "ユーザー「#{@user.name}」を削除しました。"

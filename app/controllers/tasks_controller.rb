@@ -14,10 +14,7 @@ class TasksController < ApplicationController
   def create
     @task = current_user.tasks.new(task_params)
 
-    if params[:back].present?
-      render :new
-      return
-    end
+    return render :new if params[:back].present?
 
     if @task.save
       TaskMailer.creation_email(@task).deliver_now
@@ -54,7 +51,7 @@ class TasksController < ApplicationController
 
   def import
     current_user.tasks.import(params[:file])
-    redirect_to tasks_url, notice: 'タスクを追加しました'
+    redirect_to tasks_url, notice: "タスクを追加しました"
   end
 
   private

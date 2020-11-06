@@ -2,10 +2,10 @@
 
 class Task < ApplicationRecord
   has_one_attached :image
-  enum status: { untouched: 0, started: 1, completed: 2 }
-  enum priority: { low: 0, middle: 1, high: 2 }
+  enum status: {untouched: 0, started: 1, completed: 2}
+  enum priority: {low: 0, middle: 1, high: 2}
 
-  validates :name, presence: true, length: { maximum: 30 }
+  validates :name, presence: true, length: {maximum: 30}
   validate :validate_name_not_including_comma
 
   belongs_to :user
@@ -36,7 +36,7 @@ class Task < ApplicationRecord
   private
 
   def validate_name_not_including_comma
-    errors.add(:name, 'にカンマを含めることはできません') if name&.include?(',')
+    errors.add(:name, "にカンマを含めることはできません") if name&.include?(",")
   end
 
   def self.ransackable_attributes(_auth_object = nil)
