@@ -17,9 +17,10 @@ ja:
         image: 画像
         priority: 優先度
         status: ステータス
-        untouched: 着手
-        started: 未着手
-        completed: 完了
+        statuses:
+          untouched: 着手
+          started: 未着手
+          completed: 完了
         created_at: 登録日時
         updated_at: 更新日時
         deadline: 締切期限
