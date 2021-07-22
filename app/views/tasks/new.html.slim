@@ -14,5 +14,12 @@ h1 タスクの新規登録
     = f.label :image
     = f.file_field :image, class: 'form-control'
   .form-group
-    = f.hidden_field :status, id: 'task_completed'
+    = f.label :priority
+    = f.select :priority, Task.priorities.keys, {}, class: 'form-control'
+  .form-group
+    = f.label :status
+    = f.select :status, Task.statuses.keys, {}, class: 'form-control'
+  .form-group
+    = f.label :deadline
+    = f.datetime_field :deadline, class: 'form-control'
   = f.submit nil, class: 'btn btn-primary'
